@@ -1,12 +1,10 @@
 import axios from 'axios'
 import React,{useEffect, useState} from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 
 function PopularMovies() {
-   {/* API Calls */}
    const [movies,setMovies] = useState([])
    const headers={
        'Authorization':
@@ -20,7 +18,7 @@ function PopularMovies() {
            })
        }
        fetchDB()
-   },[])
+   })
   return (
     <main>
     {/* Popular Movies */}
@@ -82,10 +80,6 @@ function PopularMovies() {
     <Swiper
         slidesPerView={1}
         spaceBetween={5}
-        // pagination={{
-        // clickable: true,
-        // }}
-        // modules={[Pagination]}
         className="max-w-[400px] md:hidden lg:hidden"
     >
         {movies.map((movie)=>{

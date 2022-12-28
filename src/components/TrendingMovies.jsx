@@ -1,12 +1,11 @@
 import axios from 'axios'
 import React,{useEffect, useState} from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper";
+import { Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 
 function TrendingMovies() {
-     {/* API Calls */}
      const [movies,setMovies] = useState([])
      const headers={
          'Authorization':
@@ -20,7 +19,7 @@ function TrendingMovies() {
              })
          }
          fetchDB()
-     },[])
+     })
   return (
     <main>
     {/* Trending Movies */}
@@ -32,9 +31,6 @@ function TrendingMovies() {
         delay: 5000,
         disableOnInteraction: false,
         }}
-        // pagination={{
-        // clickable: true,
-        // }}
         modules={[Autoplay]}
         loop
         className="mySwiper"
