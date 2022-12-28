@@ -1,5 +1,6 @@
 import React from 'react'
 import PopularMovies from '../components/PopularMovies'
+import TopRatedMovies from '../components/TopRatedMovies'
 import TrendingMovies from '../components/TrendingMovies'
 
 
@@ -9,6 +10,7 @@ function Homepage() {
     <main>
         <TrendingMovies/>
         <PopularMovies/>
+        <TopRatedMovies/>
     </main>
     )
 }

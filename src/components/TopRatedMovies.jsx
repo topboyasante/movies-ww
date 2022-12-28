@@ -5,27 +5,27 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Link } from 'react-router-dom';
 
-function PopularMovies() {
-   const [movies,setMovies] = useState([])
-   const headers={
-       'Authorization':
-       'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNDVjNjczNWYyYzU1MmYzMjlmZjQwMWRkOWEwM2UxNiIsInN1YiI6IjYzOTcxMzFkZDA1YTAzMDBhZTUwODU3MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.khQigZ9yLjQDf6u2P3mNgl5fZe8_MOIwwRluyT_mXr8'
-   }
-   useEffect(()=>{
-       async function fetchDB(){
-           await axios.get('https://api.themoviedb.org/3/movie/popular',{headers})
-           .then((res)=>{
-               setMovies(res.data.results)
-           })
-       }
-       fetchDB()
-   })
+function TopRatedMovies() {
+    const [movies,setMovies] = useState([])
+    const headers={
+        'Authorization':
+        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNDVjNjczNWYyYzU1MmYzMjlmZjQwMWRkOWEwM2UxNiIsInN1YiI6IjYzOTcxMzFkZDA1YTAzMDBhZTUwODU3MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.khQigZ9yLjQDf6u2P3mNgl5fZe8_MOIwwRluyT_mXr8'
+    }
+    useEffect(()=>{
+        async function fetchDB(){
+            await axios.get('https://api.themoviedb.org/3/movie/top_rated',{headers})
+            .then((res)=>{
+                setMovies(res.data.results)
+            })
+        }
+        fetchDB()
+    })
   return (
     <main>
-    {/* Popular Movies */}
+        {/* Popular Movies */}
     <section className='text-white p-5'>
     <div>
-        <h1 className='text-2xl p-5'>Popular Movies</h1>
+        <h1 className='text-2xl p-5'>Top Rated Movies</h1>
     </div>
     {/* Large */}
     <Swiper
@@ -117,4 +117,4 @@ function PopularMovies() {
   )
 }
 
-export default PopularMovies
+export default TopRatedMovies
